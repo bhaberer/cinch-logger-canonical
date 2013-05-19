@@ -1,5 +1,5 @@
 module Cinch
-  module Logger
+  class Logger
     module Canonical
       VERSION = "0.0.1"
     end
