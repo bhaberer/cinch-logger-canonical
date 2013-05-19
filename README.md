@@ -1,6 +1,9 @@
 # Cinch::Logger::Canonical
 
-TODO: Write a gem description
+This Logger will log the channels that the bot joins in a very simple format:
+
+    [YYYY-MM-DD HH:MM:SS] <NICK> MESSAGE
+    [YYYY-MM-DD HH:MM:SS] * NICK ACTION
 
 ## Installation
 
@@ -18,7 +21,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+All you need to do is add the new logger to your @bot:
+
+    @bot.loggers << Cinch::Logger::CanonicalLogger.new(channel, @bot)
 
 ## Contributing
 

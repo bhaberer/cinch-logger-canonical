@@ -23,7 +23,7 @@ module Cinch
       end
 
       def initialize(channel, bot)
-        @bot_name     = bot
+        @bot_name     = bot.nick
         @channel      = channel
         @output       = File.open(today_log, 'a')
         @output.sync  = true
@@ -34,6 +34,8 @@ module Cinch
       private
 
       def today_log
+        # TODO allow for custom log paths
+        Dir.mkdir('./logs') unless Dir.exist?('./logs')
         File.join('.', 'logs', "#{@channel}_#{Time.now.strftime("%Y-%m-%d")}.log")
       end
 
