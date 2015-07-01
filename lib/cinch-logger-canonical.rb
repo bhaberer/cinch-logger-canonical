@@ -11,7 +11,7 @@ module Cinch
         @mutex.synchronize do
           # Ensure that we're logging to the right file.
           Array(messages).each do |message|
-            next unless message.match(Regexp.new("PRIVMSG ##{@channel}"))
+            next unless message.match(/PRIVMSG ##{@channel} /)
             message = format_general(message)
             message = format_message(message, event)
 
